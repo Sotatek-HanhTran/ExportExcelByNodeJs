@@ -1,8 +1,6 @@
 const { publicDecrypt } = require('crypto');
 const exportUsersToExcel = require('./exportToExcel');
 
-const todayDate = new Date().toString().slice(0, 10);
-
 const thongtinkham = [
     {
         ngay: '2021-07-12',
@@ -27,7 +25,7 @@ const thongtinkham = [
     
 ];
 
-
+// cast data
 function Thongtinphongkham(obj) {
     this.ngay = "";
     this.phongban = "";
@@ -60,14 +58,13 @@ const GetAllData = function (tt=[]) {
 
   const data = GetAllData(thongtinkham);
 
-  
+  // format data to export
   const FomartData = function(startDate, endDate)
   {
     var thongtinkham = [];
     var tt = data;
     for (var i = parseInt(startDate); i <= parseInt(endDate); i++) 
     {
-      //yyyymmdd
       var date = i.toString().insert(6,"-").insert(4,"-");
       var ttDate = tt.filter(l => l.ngay == date);
       if (ttDate.length > 0)
@@ -112,6 +109,16 @@ const GetAllData = function (tt=[]) {
 
 const dataToExport = FomartData(20210711, 20210712);  
 
-const filePath = './outputFiles/thongtinngay_'+ todayDate.replace('/','').replace('/','') + '.xlsx';
+// combie file path
+function getFormattedDate(date) {
+  let year = date.getFullYear();
+  let month = (1 + date.getMonth()).toString().padStart(2, '0');
+  let day = date.getDate().toString().padStart(2, '0');
+
+  return year + month + day;
+}
+const todayDate = getFormattedDate(new Date());
+
+const filePath = './outputFiles/thongtinngay_'+ todayDate.replace('-','').replace('-','') + '.xlsx';
 
 exportUsersToExcel(dataToExport, filePath);
