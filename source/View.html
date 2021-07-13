@@ -1,0 +1,121 @@
+<html>
+    <body>
+        <style>
+            input{
+                height: 30px;
+                width: 30%;
+                max-width: 250px;
+            }
+            select{
+                height: 30px;
+                width: 30%;
+                max-width: 250px;
+            }
+            table, th, td {
+                   border: 1px solid black;
+                   border-collapse: collapse;
+               }
+        </style>
+        <div>
+            <div>
+                <label>Email</label>
+            </div>
+            <div>
+                <input id="emial" class="form-control" placeholder="Email" maxlength="80">
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                <label>Schedule Type</label>
+            </div>
+            <div>
+                <select id="schedule-type">
+                    <option value=0>Daily</option>
+                    <option value=1>Weekly</option>
+                    <option value=2>Monthly</option>
+                  </select>
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                <label>Day of Week</label>
+            </div>
+            <div>
+                <select id="day-of-week">
+                    <option value=1>Monday</option>
+                    <option value=2>TueDay</option>
+                    <option value=3>WenesDay</option>
+                    <option value=4>ThirDay</option>
+                    <option value=5>FriDay</option>
+                    <option value=6>SaturDay</option>
+                    <option value=7>SunDay</option>
+                  </select>
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                <label>Report Type</label>
+            </div>
+            <div>
+                <select id="report-type">
+                    <option value=0>Thống kê tổng thể</option>
+                    <option value=1>Thống kê phản hồi</option>
+                    <option value=2>Thống kê lấy số</option>
+                  </select>
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                <label>Start Time</label>
+            </div>
+            <div>
+                <input id="start-time" type="date" value="2021-07-13" class="form-control">
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="Table">
+            <style>
+               table#t01 tr:nth-child(even) {
+                   background-color: #eee;
+               }
+               table#t01 tr:nth-child(odd) {
+                   background-color: #fff;
+               }
+               table#t01 th {
+                   color: black;
+                   background-color: yellow;
+               }
+               </style>
+            <table id="t01" style="width:100%">
+                <tr>
+                    <th>Ngày</th>
+                    <th>Phòng Ban</th>
+                    <th>Tên</th>
+                </tr>
+                <tr>
+                    <td>2021-07-12</td>
+                    <td>khoa trĩ</td>
+                    <td>Nguyễn Văn a</td>
+                </tr>
+                 <tr>
+                    <td>2021-07-12</td>
+                    <td>khoa trĩ</td>
+                    <td>Trịnh Thị b</td>
+                </tr>
+                </tr>
+           </table>  
+        </div>
+        <br />
+        <br />
+        <footer>
+        <div>
+            <button class="btn-custom btn-submit-common" type="submit">Thống kê</button>
+        </div>
+        </footer>
+    </body>
+</html> 
